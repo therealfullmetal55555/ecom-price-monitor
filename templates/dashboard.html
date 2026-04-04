@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Price Monitor — WB</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0f0f0e; color: #e8e2d5; font-family: ui-monospace, SFMono-Regular, monospace; }
+.top { display: flex; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid #2a2a28; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #8a867e; }
+.top b { color: #e8e2d5; }
+.hero { padding: 28px 20px; display: grid; grid-template-columns: 1fr 320px; gap: 24px; border-bottom: 1px solid #2a2a28; }
+.hero h1 { font-family: Georgia, serif; font-size: 42px; line-height: 0.9; letter-spacing: -0.03em; font-weight: 400; color: #f5f3ef; }
+.hero h1 i { font-style: italic; color: #8a867e; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #2a2a28; border: 1px solid #2a2a28; }
+.stat { background: #141413; padding: 14px; }
+.stat small { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #8a867e; display: block; margin-bottom: 4px; }
+.stat b { font-size: 20px; font-weight: 700; }
+.table-wrap { padding: 20px; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th { text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #8a867e; padding: 10px 8px; border-bottom: 1px solid #2a2a28; }
+td { padding: 14px 8px; border-bottom: 1px solid #1e1e1c; vertical-align: top; }
+.price { font-weight: 700; font-size: 13px; }
+.down { color: #ef4444; }
+.chart { display: flex; gap: 2px; height: 28px; align-items: end; margin-top: 6px; }
+.bar { width: 6px; background: #e8e2d5; border-radius: 2px; }
+.bar.down { background: #ef4444; }
+.tag { font-size: 10px; padding: 3px 8px; border-radius: 100px; border: 1px solid #2a2a28; }
+.tag.alert { background: #ef4444; color: white; border-color: #ef4444; }
+.tag.ok { background: transparent; color: #8a867e; }
+@media (max-width: 800px) { .hero { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="top"><div><b>Project 03</b> — Price Monitor • Wildberries API v4 • card.wb.ru</div><div>8 products • 5-day • Rate limited 20 RPM</div></div>
+
+<div class="hero">
+  <h1>Price <i>doesn't</i> sleep.<br>We track when<br>competitors drop.</h1>
+  <div>
+    <div class="stats">
+      <div class="stat"><small>Tracked</small><b>8 SKUs</b></div>
+      <div class="stat"><small>Alerts 5d</small><b style="color:#ef4444">3 critical</b></div>
+      <div class="stat"><small>Avg deviation</small><b>-4.2%</b></div>
+      <div class="stat"><small>API cost</small><b>$0</b></div>
+    </div>
+    <div style="margin-top:12px; font-size:11px; color:#8a867e; line-height:1.5;">Uses public JSON API, not HTML parsing. Batch 50 IDs, explicit User-Agent, 1.5s delay. Resilient: 403 antibot handled, not crash. History, not snapshot.</div>
+  </div>
+</div>
+
+<div class="table-wrap">
+  <table>
+    <tr><th>SKU • Product</th><th>Category</th><th>Price now</th><th>5-day</th><th>Chart</th><th>Status</th></tr>
+    <tr>
+      <td><b style="color:#f5f3ef">1097975275</b><br><span style="color:#8a867e; font-size:11px;">Wireless Headphones XYZ • SoundMax</span></td>
+      <td>headphones</td>
+      <td class="price">2750₽</td>
+      <td class="down">-4.8% ↓</td>
+      <td><div class="chart"><div class="bar" style="height:90%"></div><div class="bar" style="height:90%"></div><div class="bar down" style="height:70%"></div><div class="bar down" style="height:70%"></div><div class="bar" style="height:75%"></div></div></td>
+      <td><span class="tag alert">Below my 3490₽</span></td>
+    </tr>
+    <tr>
+      <td><b style="color:#f5f3ef">173592402</b><br><span style="color:#8a867e; font-size:11px;">Powerbank 20000mAh SuperCharge</span></td>
+      <td>powerbank</td>
+      <td class="price">2390₽</td>
+      <td class="down">-7.7% ↓</td>
+      <td><div class="chart"><div class="bar" style="height:100%"></div><div class="bar" style="height:100%"></div><div class="bar down" style="height:70%"></div><div class="bar down" style="height:70%"></div><div class="bar" style="height:80%"></div></div></td>
+      <td><span class="tag alert">Alert • -8% vs my 2490₽</span></td>
+    </tr>
+    <tr>
+      <td><b style="color:#f5f3ef">192707003</b><br><span style="color:#8a867e; font-size:11px;">Smartwatch Fit Pro 2</span></td>
+      <td>smartwatch</td>
+      <td class="price">4890₽</td>
+      <td class="down">-7.5% ↓</td>
+      <td><div class="chart"><div class="bar" style="height:100%"></div><div class="bar" style="height:100%"></div><div class="bar" style="height:95%"></div><div class="bar" style="height:85%"></div><div class="bar down" style="height:75%"></div></div></td>
+      <td><span class="tag alert">Now cheaper than my 4990₽</span></td>
+    </tr>
+    <tr>
+      <td><b style="color:#f5f3ef">168300345</b><br><span style="color:#8a867e; font-size:11px;">Fast Charger 65W GaN Ultra</span></td>
+      <td>charger</td>
+      <td class="price">1190₽</td>
+      <td class="down">-14.3% ↓</td>
+      <td><div class="chart"><div class="bar" style="height:100%"></div><div class="bar" style="height:100%"></div><div class="bar" style="height:85%"></div><div class="bar down" style="height:60%"></div><div class="bar down" style="height:60%"></div></div></td>
+      <td><span class="tag alert">-7.8% vs my 1290₽</span></td>
+    </tr>
+    <tr>
+      <td><b style="color:#f5f3ef">173889188</b><br><span style="color:#8a867e; font-size:11px;">TWS Earbuds Lite</span></td>
+      <td>headphones</td>
+      <td class="price">1850₽</td>
+      <td class="down">-2.1% ↓</td>
+      <td><div class="chart"><div class="bar" style="height:90%"></div><div class="bar" style="height:90%"></div><div class="bar" style="height:80%"></div><div class="bar" style="height:80%"></div><div class="bar" style="height:85%"></div></div></td>
+      <td><span class="tag ok">OK</span></td>
+    </tr>
+  </table>
+</div>
+
+<div style="padding:20px; border-top:1px solid #2a2a28; font-size:11px; color:#8a867e; line-height:1.5;">
+  <b style="color:#e8e2d5;">How it works:</b> card.wb.ru/cards/v4/detail?appType=1&curr=rub&dest=-1257786&spp=30&nm=ID1;ID2 • Price = sizes[].price.product /100 • dest affects price • Batch up to 50 • SQLite price_history • APScheduler daily 09:00 Europe/Tallinn • Telegram alert when competitor < my_price * 0.95<br><br>
+  <b style="color:#e8e2d5;">ToS:</b> Explicit User-Agent, 1.5s delay, 20 RPM, no checkout automation. Cloud IPs get 403 antibot — handled gracefully, not aggressive retry. Run locally or residential proxy for real data.
+</div>
+</body>
+</html>
