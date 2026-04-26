@@ -1,0 +1,26 @@
+date,nm_id,name,brand,price,basic_price,in_stock,category,notes
+2026-09-23,1097975275,Wireless Headphones XYZ,XYZ,2890,3990,true,headphones,stable
+2026-09-24,1097975275,Wireless Headphones XYZ,XYZ,2890,3990,true,headphones,stable
+2026-09-25,1097975275,Wireless Headphones XYZ,XYZ,2690,3990,true,headphones,price drop -5.8% - alert triggered
+2026-09-26,1097975275,Wireless Headphones XYZ,XYZ,2690,3990,true,headphones,holds low
+2026-09-27,1097975275,Wireless Headphones XYZ,XYZ,2750,3990,true,headphones,slight increase
+2026-09-23,173889188,TWS Earbuds Lite,SoundMax,1890,2490,true,headphones,stable
+2026-09-24,173889188,TWS Earbuds Lite,SoundMax,1890,2490,true,headphones,stable
+2026-09-25,173889188,TWS Earbuds Lite,SoundMax,1790,2490,true,headphones,small drop
+2026-09-26,173889188,TWS Earbuds Lite,SoundMax,1790,2490,true,headphones,stable
+2026-09-27,173889188,TWS Earbuds Lite,SoundMax,1850,2490,true,headphones,recovered
+2026-09-23,173592402,Powerbank 20000mAh SuperCharge,PowerCo,2590,3290,true,powerbank,competitor above my 2490
+2026-09-24,173592402,Powerbank 20000mAh SuperCharge,PowerCo,2590,3290,true,powerbank,stable
+2026-09-25,173592402,Powerbank 20000mAh SuperCharge,PowerCo,2290,3290,true,powerbank,ALERT - dropped below my price -8%
+2026-09-26,173592402,Powerbank 20000mAh SuperCharge,PowerCo,2290,3290,true,powerbank,holds
+2026-09-27,173592402,Powerbank 20000mAh SuperCharge,PowerCo,2390,3290,true,powerbank,slight recovery
+2026-09-23,192707003,Smartwatch Fit Pro 2,WatchBrand,5290,6990,true,smartwatch,above my 4990
+2026-09-24,192707003,Smartwatch Fit Pro 2,WatchBrand,5290,6990,true,smartwatch,stable
+2026-09-25,192707003,Smartwatch Fit Pro 2,WatchBrand,5190,6990,true,smartwatch,small drop
+2026-09-26,192707003,Smartwatch Fit Pro 2,WatchBrand,4990,6990,true,smartwatch,parity
+2026-09-27,192707003,Smartwatch Fit Pro 2,WatchBrand,4890,6990,true,smartwatch,now cheaper than me - alert
+2026-09-23,168300345,Fast Charger 65W GaN Ultra,ChargeMax,1390,1890,true,charger,above my 1290
+2026-09-24,168300345,Fast Charger 65W GaN Ultra,ChargeMax,1390,1890,true,charger,stable
+2026-09-25,168300345,Fast Charger 65W GaN Ultra,ChargeMax,1290,1890,true,charger,parity
+2026-09-26,168300345,Fast Charger 65W GaN Ultra,ChargeMax,1190,1890,true,charger,cheaper - alert
+2026-09-27,168300345,Fast Charger 65W GaN Ultra,ChargeMax,1190,1890,true,charger,holds low
